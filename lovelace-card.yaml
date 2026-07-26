@@ -1,0 +1,9 @@
+type: custom:energy-core-x
+name: Florian
+battery_capacity_kwh: 2.52
+pv_entity: sensor.zuhause_jackery_solarvault_3_pro_solar_power
+pv_today_entity: sensor.energy_core_pv_heute
+soc_entity: sensor.zuhause_jackery_solarvault_3_pro_battery_soc
+output_entity: sensor.zuhause_jackery_solarvault_3_pro_grid_port_output_power
+grid_entity: sensor.verbrauch_gesamt_total_active_power
+grid_today_entity: sensor.zuhause_verbrauch_gesamt_netzbezug_heute

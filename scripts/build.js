@@ -1,0 +1,1 @@
+const fs=require('fs');const path=require('path');fs.mkdirSync(path.join(__dirname,'..','dist'),{recursive:true});fs.copyFileSync(path.join(__dirname,'..','src','energy-core-x.js'),path.join(__dirname,'..','dist','energy-core-x.js'));

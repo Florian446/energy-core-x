@@ -1,0 +1,9 @@
+{
+  "name": "energy-core-x",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check dist/energy-core-x.js",
+    "build": "node scripts/build.js"
+  }
+}
