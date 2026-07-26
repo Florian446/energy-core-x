@@ -524,13 +524,52 @@ class EnergyCoreX extends HTMLElement {
         }
       }
 
-      @media (max-width:620px) {
+      /* v0.2.1: layout stability */
+      .card { container-type:inline-size; width:100%; min-width:0; }
+      .hero, .metrics, .flow, .diagram { min-width:0; }
+      .metric { overflow:hidden; }
+      .metric strong { max-width:100%; overflow:hidden; white-space:nowrap; font-size:clamp(19px,2.1vw,34px); }
+      .metric small { overflow-wrap:anywhere; }
+      .node, .battery-box { min-width:0; }
+      .node strong { max-width:100%; overflow:hidden; white-space:nowrap; }
+
+      @container (max-width:760px) {
         .card { padding:18px; border-radius:24px; }
+        .hero { align-items:flex-start; margin-bottom:22px; }
         h1 { font-size:46px; }
-        .metrics { grid-template-columns:1fr 1fr; }
-        .metric { padding:13px; }
-        .metric strong { font-size:23px; }
-        .flow { padding:18px; }
+        time { font-size:20px; padding-top:38px; }
+
+        .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+        .metric { padding:14px; min-height:112px; }
+        .metric:last-child { grid-column:1/-1; }
+        .metric strong { font-size:clamp(22px,7cqw,32px); }
+
+        .flow { padding:18px; border-radius:20px; overflow:hidden; }
+        .diagram { grid-template-columns:1fr; gap:12px; min-height:0; }
+        .node { width:100%; }
+        .battery-box { width:min(100%,320px); margin:0 auto; }
+        .line { width:3px; height:38px; margin:0 auto; }
+        .line.active { background:linear-gradient(180deg,rgba(255,255,255,.1),currentColor); }
+        .line i { left:50%; top:-6px; margin-left:-3.5px; margin-top:0; }
+        .line.active i { animation:flow-down 2s linear infinite; }
+        .line.reverse.active i { animation:flow-up 2s linear infinite; }
+
+        @keyframes flow-down { from { top:-6px; } to { top:calc(100% - 1px); } }
+        @keyframes flow-up { from { top:calc(100% - 1px); } to { top:-6px; } }
+      }
+
+      @container (max-width:430px) {
+        .card { padding:15px; }
+        h1 { font-size:40px; }
+        time { font-size:18px; padding-top:34px; }
+        .metrics { grid-template-columns:1fr; }
+        .metric, .metric:last-child {
+          grid-column:auto; min-height:0; display:grid;
+          grid-template-columns:1fr auto; align-items:center; gap:5px 14px;
+        }
+        .metric span { margin:0; }
+        .metric strong { grid-column:2; grid-row:1; font-size:28px; text-align:right; }
+        .metric small { grid-column:1/-1; margin-top:2px; }
       }
     `;
   }
@@ -548,4 +587,4 @@ window.customCards.push({
   preview: false,
 });
 
-console.info("ENERGY CORE X v0.2.0");
+console.info("ENERGY CORE X v0.2.1");

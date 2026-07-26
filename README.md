@@ -1,12 +1,12 @@
-# Energy Core X v0.2.0
+# Energy Core X v0.2.1
 
-Update mit:
-- entzerrtem Hero
-- kompakten Kennzahlen
-- großem Energy Flow
-- animierten Energiepunkten
-- Akkuanzeige mit 2,52 kWh
-- automatischer Netzflussrichtung
+Reines Layout-Fix für schmale Karten.
 
-Für das Update den Inhalt dieses Ordners direkt in das GitHub-Repository hochladen und vorhandene Dateien ersetzen.
-Danach HACS neu laden bzw. Energy Core X erneut herunterladen.
+Behoben:
+- Werte überlappen nicht mehr
+- Zahlen bleiben innerhalb ihrer Kacheln
+- Energy Flow wird bei schmaler Kartenbreite vertikal
+- Haus und Netz werden nicht mehr abgeschnitten
+- keine neuen Funktionen oder zusätzlichen Inhalte
+
+Zum Update den Inhalt direkt ins bestehende GitHub-Repository laden und vorhandene Dateien ersetzen. Danach in HACS neu herunterladen/aktualisieren und den Browser hart neu laden.
